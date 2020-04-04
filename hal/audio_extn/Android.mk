@@ -122,10 +122,14 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 qcs605 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
+endif
+
+ifeq ($(QCPATH),)
+     LOCAL_CFLAGS += -D_OSS
 endif
 
 LOCAL_SRC_FILES:= ssr.c
@@ -184,7 +188,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 qcs605 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
 endif
@@ -237,7 +241,7 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
-ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 qcs605 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
 endif
@@ -293,7 +297,7 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
-ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 qcs605 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
 endif
@@ -354,7 +358,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 qcs605 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -414,7 +418,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 qcs605 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -473,7 +477,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 qcs605 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -534,7 +538,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 qcs605 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -598,7 +602,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 qcs605 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -668,7 +672,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 qcs605 sdmshrike msmnile kona lito atoll sdm660 msm8937 msm8998 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM := msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -727,7 +731,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona sdm660 msm8937 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 qcs605 sdmshrike msmnile kona sdm660 msm8937 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM = msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true
@@ -784,7 +788,7 @@ LOCAL_VENDOR_MODULE := true
 PRIMARY_HAL_PATH := $(call project-path-for,qcom-audio)/hal
 AUDIO_PLATFORM := $(TARGET_BOARD_PLATFORM)
 
-ifneq ($(filter sdm845 sdm710 sdmshrike msmnile kona sdm660 msm8937 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter sdm845 sdm710 qcs605 sdmshrike msmnile kona sdm660 msm8937 $(MSMSTEPPE) $(TRINKET),$(TARGET_BOARD_PLATFORM)),)
   # B-family platform uses msm8974 code base
   AUDIO_PLATFORM = msm8974
   MULTIPLE_HW_VARIANTS_ENABLED := true

@@ -64,6 +64,7 @@ ifneq ($(filter sdm710,$(TARGET_BOARD_PLATFORM)),)
 endif
 ifneq ($(filter qcs605,$(TARGET_BOARD_PLATFORM)),)
   LOCAL_CFLAGS := -DPLATFORM_QCS605
+  LOCAL_CFLAGS += -DMAX_TARGET_SPECIFIC_CHANNEL_CNT="8"
 endif
 ifneq ($(filter msmnile sdmshrike,$(TARGET_BOARD_PLATFORM)),)
   LOCAL_CFLAGS := -DPLATFORM_MSMNILE
@@ -344,6 +345,11 @@ ifneq ($(strip $(AUDIO_FEATURE_ENABLED_EXT_AMPLIFIER)),false)
     LOCAL_CFLAGS += -DEXT_AMPLIFIER_ENABLED
     LOCAL_SRC_FILES += audio_extn/audio_amplifier.c
     LOCAL_SHARED_LIBRARIES += libhardware
+endif
+
+ifeq ($(strip $(AUDIO_FEATURE_ELLIPTIC_ULTRASOUND_SUPPORT)),true)
+    LOCAL_CFLAGS += -DELLIPTIC_ULTRASOUND_ENABLED
+    LOCAL_SRC_FILES += audio_extn/ultrasound.c
 endif
 
 LOCAL_CFLAGS += -D_GNU_SOURCE
